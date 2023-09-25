@@ -79,7 +79,7 @@ export default function ChatBody() {
               question: parsedData.questions,
               i: 0
             });
-    
+
             const newChatSection = (
               <div className="chat-section" key={chatSections.length}>
                 <BotChat question={parsedData.questions[0]} />
@@ -104,7 +104,7 @@ export default function ChatBody() {
     
       const handleClick = () => {
         const updatedI = selectAns.i + 1;
-
+        console.log("After UseEffect", selectAns);
         setSelectAns((prevState) => ({
           ...prevState,
           i: updatedI
@@ -120,7 +120,7 @@ export default function ChatBody() {
             />
           </div>
         );
-    
+        console.log("After HandleClick", selectAns);
         setChatSections((prevSections) => [...prevSections, newChatSection]);
 
         if (selectAns.i === 18) {
